@@ -39,6 +39,7 @@ namespace XamarinJson.ViewModels
             responseResult = await BaseHttpService.Instance.SendRequestAsync(HttpCommand.GET, requestDic);
             //EmployeeList = new ObservableCollection<Employee>(JsonConvert.DeserializeObject<List<Employee>>(responseResult));
 
+            EmployeeList.Clear();
             EmployeeList.AddRange(JsonConvert.DeserializeObject<List<Employee>>(responseResult), System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
         }
 
